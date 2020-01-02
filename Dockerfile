@@ -11,6 +11,8 @@ RUN mkdir /opt/assistant-relay &&\
 RUN mkdir /config &&\
 	sed -i -e 's;./bin/config.json;/config/config.json;' /opt/assistant-relay/bin/www && \
 	sed -i -e 's;./bin/config.json;/config/config.json;' /opt/assistant-relay/helpers/server.js && \
+	sed -i -e 's;./bin/config.json;/config/config.json;' /opt/assistant-relay/helpers/auth.js && \
+	sed -i -e 's;./bin/config.json;/config/config.json;' /opt/assistant-relay/helpers/assistant.js && \
 	sed -i -e 's;./bin/config.json;/config/config.json;' /opt/assistant-relay/routes/index.js && \
 	sed -i -e 's;./bin/config.json;/config/config.json;' /opt/assistant-relay/routes/server.js
 
