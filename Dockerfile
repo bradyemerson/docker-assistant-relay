@@ -9,7 +9,10 @@ RUN mkdir /opt/assistant-relay &&\
 	npm install
 
 RUN mkdir /config &&\
-	sed -i -e 's;./bin/config.json;/config/config.json;' /opt/assistant-relay/bin/www
+	sed -i -e 's;./bin/config.json;/config/config.json;' /opt/assistant-relay/bin/www && \
+	sed -i -e 's;./bin/config.json;/config/config.json;' /opt/assistant-relay/helpers/server.js && \
+	sed -i -e 's;./bin/config.json;/config/config.json;' /opt/assistant-relay/routes/index.js && \
+	sed -i -e 's;./bin/config.json;/config/config.json;' /opt/assistant-relay/routes/server.js
 
 VOLUME /config
 EXPOSE 3000
