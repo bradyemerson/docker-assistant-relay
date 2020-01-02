@@ -8,7 +8,10 @@ RUN mkdir /opt/assistant-relay &&\
 	cd /opt/assistant-relay && \
 	npm install
 
-VOLUME /opt/assistant-relay/bin
+RUN mkdir /config &&\
+	sed -i -e 's;./bin/config.json;/config/config.json;' /opt/assistant-relay/bin/www
+
+VOLUME /config
 EXPOSE 3000
 
 WORKDIR /opt/assistant-relay
